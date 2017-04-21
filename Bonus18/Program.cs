@@ -19,7 +19,15 @@ namespace Bonus18
             Console.WriteLine("Please enter price of car"); 
             Car1.PriceofCar = double.Parse(Console.ReadLine());
 
+
+            Console.WriteLine("Make of car is: " + Car1.MakeofCar);
+            Console.WriteLine();
+            Console.WriteLine("Model of car is: " + Car1.ModelofCar);
+            Console.WriteLine();
+            Console.WriteLine("Year of Car is: " + Car1.YearofCar);
+            Console.WriteLine();
             Console.WriteLine("price of car is: " +Car1.PriceofCar);
+            
 
 
 
