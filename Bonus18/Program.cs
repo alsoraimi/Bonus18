@@ -10,30 +10,24 @@ namespace Bonus18
     {
         static void Main(string[] args)
         {
+
+            Console.Title ="Welcome to the Grand Circus Motors admin console!!!";  // makes title for entire console
+            Console.WriteLine();
             CarClass Car1 = new CarClass();
-            Console.WriteLine("Enter Make of Car");
-            Car1.MakeofCar = Console.ReadLine();
+            Console.WriteLine("Enter Make of Car");   
+            Car1.MakeofCar = Console.ReadLine();       //input for make of car, no validation because it can contain both letters and numbers, same with model
             Console.WriteLine("Enter Model of Car");
-            Car1.ModelofCar = Console.ReadLine();
-            Car1.YearofCar = int.Parse(GetValidYear());
-            Car1.PriceofCar = double.Parse(GetValidPrice());
+            Car1.ModelofCar = Console.ReadLine();     //gets input for model
+            Car1.YearofCar = int.Parse(GetValidYear()); //gets valid input for year
+            Car1.PriceofCar = double.Parse(GetValidPrice()); //gets valid input for price
             Console.Clear();
 
             Console.WriteLine("Current Inventory: ");
             Console.WriteLine();
 
-
-            Console.WriteLine(Car1.MakeofCar + "        " + Car1.ModelofCar + "         " + Car1.YearofCar + "         " + Car1.PriceofCar);
+            // prints input from user on same line using spaces
+            Console.WriteLine(Car1.MakeofCar + "        " + Car1.ModelofCar + "         " + Car1.YearofCar + "         " + "$" + Car1.PriceofCar);
             Console.WriteLine();
-            //Console.WriteLine( Car1.ModelofCar);
-            //Console.WriteLine();
-            //Console.WriteLine( Car1.YearofCar);
-            //Console.WriteLine();
-            //Console.WriteLine(Car1.PriceofCar);
-
-
-
-
         }
 
         public static string GetValidYear()
@@ -51,7 +45,7 @@ namespace Bonus18
             }
             return YearofCar;
 
-        }
+        }  //validation for year
 
         public static string GetValidPrice()
         {
@@ -67,7 +61,7 @@ namespace Bonus18
 
             }
             return PriceOfCar;
-        }
+        }  //validation for price
 
     }
     }
