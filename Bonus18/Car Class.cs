@@ -8,13 +8,15 @@ namespace Bonus18
 {
     class CarClass
     {
-        #region
+        #region Variables
         private string Make;
         private string Model;
         private int Year;
         private double Price;
         #endregion
 
+
+        #region Properties
         public string MakeofCar
         {
             set
@@ -59,6 +61,9 @@ namespace Bonus18
                 return Price;
             }
         }
+        #endregion
+
+
         public CarClass (string MakeofCarInput, 
             string ModelofCarInput,
             int YearofCarInput,
@@ -72,10 +77,10 @@ namespace Bonus18
         }
         public CarClass()
         {
-            Make = Console.ReadLine();
-            Model = Console.ReadLine();
-            Year = Console.ReadLine();
-            Price = Console.ReadLine();
+            Make = "";
+            Model = "";
+            Year = 0;
+            Price = 0;
 
         }
 
