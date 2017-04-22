@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+/// <summary>
+/// Abrahim Alsoraimi
+/// BonusLab18
+/// 04/22/2017
+/// </summary>
 
 namespace Bonus18
 {
@@ -124,7 +129,7 @@ namespace Bonus18
                 }
             }
 
-        }
+        }    //added loop for user to continue
     }
 }
 
