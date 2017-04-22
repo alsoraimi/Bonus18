@@ -12,22 +12,52 @@ namespace Bonus18
         {
 
             Console.Title ="Welcome to the Grand Circus Motors admin console!!!";  // makes title for entire console
-            Console.WriteLine();
-            CarClass Car1 = new CarClass();
-            Console.WriteLine("Enter Make of Car");   
-            Car1.MakeofCar = Console.ReadLine();       //input for make of car, no validation because it can contain both letters and numbers, same with model
-            Console.WriteLine("Enter Model of Car");
-            Car1.ModelofCar = Console.ReadLine();     //gets input for model
-            Car1.YearofCar = int.Parse(GetValidYear()); //gets valid input for year
-            Car1.PriceofCar = double.Parse(GetValidPrice()); //gets valid input for price
+
+            Console.WriteLine("How many cars are you entering? ");
+            int numCars = int.Parse(Console.ReadLine());
+
+
+            List<CarClass> CarList = new List<CarClass>(numCars);   //added so user can input more than one vehicle
+
+            for (int i = 0; i < numCars; i++)
+            {
+                Console.WriteLine("\nWould you like to enter data for Car {0}? (y = yes n = continue)", i + 1);
+                string defaultCar = Console.ReadLine().ToLower();
+
+                if (defaultCar == "y")
+                {
+                    
+                    CarClass Car = new CarClass();     // creates new class per new user input for car
+                    Console.WriteLine("Please enter Make of Car");
+                    Car.MakeofCar = Console.ReadLine();
+                    Console.WriteLine("Please Enter Model of Car");
+                    Car.ModelofCar = Console.ReadLine();
+                    Car.YearofCar = int.Parse(GetValidYear());
+                    Car.PriceofCar = double.Parse(GetValidPrice());
+                    CarList.Add(Car);
+                    
+                }
+                else if (defaultCar == "n")
+                {
+                    CarClass Car = new CarClass();   
+                    CarList.Add(Car);
+                }
+                else
+                {
+                    Console.WriteLine("ERROR INVALID INPUT");
+                    break;
+                }
+
+            }
             Console.Clear();
+            Console.WriteLine("Car Data:");
+            Console.WriteLine("Year\tMake\tModel\tPrice");
+            foreach (CarClass item in CarList)
+                // foreach to loop through items in CarList and outputs them
+            {
+                Console.WriteLine("{0}\t{1}\t{2}\t${3}.", item.YearofCar, item.MakeofCar, item.ModelofCar, item.PriceofCar);
+            }
 
-            Console.WriteLine("Current Inventory: ");
-            Console.WriteLine();
-
-            // prints input from user on same line using spaces
-            Console.WriteLine(Car1.MakeofCar + "        " + Car1.ModelofCar + "         " + Car1.YearofCar + "         " + "$" + Car1.PriceofCar);
-            Console.WriteLine();
         }
 
         public static string GetValidYear()
